@@ -336,3 +336,8 @@
             margin-bottom: 20px;
             position: relative;
         }
+
+        .no-content{
+            justify-self: center;
+            align-items: center;
+        }
