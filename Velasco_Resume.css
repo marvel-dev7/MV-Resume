@@ -1,0 +1,565 @@
+        html{
+            overflow-y: scroll;
+        }
+        
+        *{
+            color: white;
+            font-family: Segoe UI;
+            /* box-sizing: border-box; */
+        }
+        p {
+            margin: 0px;
+        }
+        body {
+            background-image: url(Background.jpg);
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 75vh;
+            /* align-content: center; */
+            /* align-items: center; */
+            justify-items: center;
+            justify-content: center;
+            display: grid;
+            grid-template-columns: 550px -50px;
+            grid-gap: 10px;
+            grid-template-rows: 100px 2fr;
+            margin-top: 150px;
+            margin-left: 20px;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                             radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                             radial-gradient(circle at 25% 80%, rgba(120, 219, 255, 0.162) 0%, transparent 0%),
+                             radial-gradient(circle, rgba(0, 0, 0, 0.588) 100%, transparent 50%);
+            pointer-events: none;
+            background-color: rgba(0, 0, 0, 0.385);
+        }
+
+        /* For Liquid Glass Effect */
+        .glass {
+            position: relative;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(1px) saturate(180%);
+            border: 0.0625rem solid rgba(255, 255, 255, 0);
+            padding: 1.25rem;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2), inset 0 4px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        /* .glass::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(168, 168, 168, 0.137);
+            border-radius: 2rem;
+            backdrop-filter: blur(1px);
+            box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 0.448),
+                        inset 0px -9px 0px -8px rgba(255, 255, 255, 0.959);
+            opacity: 0.6;
+            z-index: -1;
+            filter: blur(1px) drop-shadow(10px 4px 6px rgba(74, 74, 74, 0.129)) brightness(30%);
+            pointer-events: none;
+        } */
+
+        /* For Navigation Tabs */
+        .nav-container {
+            padding: 5px 15px;
+            border-radius: 30px;
+            display: flex;
+            gap: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            width: 1010px; /* fixed total width so flex resizing is visible */
+            height: 60px;
+            align-items: center;
+            grid-row: 1;
+            grid-column: 2;
+            top: -105px;
+        }
+
+        .nav-btn {
+            flex: 1;
+            border: none;
+            border-radius: 40px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            gap: 8px;
+            height: 35px;
+            /* smooth resizing */
+            transition: flex 0.3s ease, background 0.3s ease;
+            font-size: smaller;
+            background: transparent;
+        }
+
+        .nav-btn:hover {
+            flex: 2; /* expands smoothly */
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .nav-btn i {
+            font-size: 20px;
+        }
+
+        /* make text fade in/out */
+        .nav-btn span {
+            opacity: 0;
+            white-space: nowrap;
+            width: 0;         /* collapse the text */
+            overflow: hidden; /* hide it */
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-btn:hover span {
+            opacity: 1;
+            width: auto;
+        }
+        .nav-icon-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 5px;
+        }
+        section {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        section.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Personal Information Sidebar */
+        .info-sidebar{
+            grid-column: 1;
+            width: 200px;
+            height: 450px;
+            /* margin-left: 100px; */
+            /* margin-top: 100px; */
+            display: block;
+            margin-right: 20px;   
+            border-radius: 30px;
+            position: sticky;
+            
+        }
+
+        .Marlon-Pic{
+            width: 170px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            position: absolute;
+            top: -106px;
+            place-self: center;
+            border-radius: 30px;
+        }
+
+        .btn-container{
+            position: absolute;
+            bottom: 20px; /* distance from bottom edge */
+            left: 0;
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            flex-direction: column; 
+            align-items: center;    
+            gap: 15px;
+        }
+        
+        .sidebar-btn {
+            position: relative;
+            color: white;
+            width: 180px;
+            height: 45px;
+            padding: 11px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            
+        }
+
+        .sidebar-btn::after {
+            border-radius: 0.75rem;
+        }
+
+        .sidebar-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+        .sidebar-content{
+            margin-top: 55px;
+            text-align: center;
+        }
+
+        .sidebar-info{
+            display: inline-block;
+            width: 300px;
+            align-items: center;
+            align-content: center;
+        }
+        
+        .sidebar-infos{
+            align-items: center;
+            display: flex;
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+
+        .info{
+            display: inline-block;
+        }
+
+        
+        /* Icon Format */
+        .icon-btn{
+            margin-right: 8px;
+        }
+
+        /* Main Info Section */
+        .main-info{
+            grid-column: 2;
+            width: 1000px;
+            height: fit-content;
+            overflow: visible;
+            min-height: 450px;
+            justify-items: center;
+            border-radius: 30px;
+            margin-top: -110px;
+        }
+
+        .title{
+            height: 10px;
+            width: 950px;
+            border-radius: 10px;
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: 500;
+            display: flex;
+            justify-content: center; 
+            align-items: center;     
+            text-align: center;
+            border-radius: 20px;
+        }
+        
+        /* section{
+            margin-left: 1px;
+        } */
+
+        /* Skill Section */
+
+        .skill-type, .education-type{
+            margin-top: 30px;
+            margin-left: 20px;
+            margin-right: 10px;
+        }
+
+        .skill-name, .education-name, .work-name{
+            font-size: 20px;
+            font-weight:700;
+            margin-bottom: 20px;
+        }
+        .skill-content{
+            margin-top: 20px;
+            margin-left: 25px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 20px; /* space between box and text */       
+            margin-top: 8px;
+            margin-bottom: 8px;
+            width: 450px;
+            flex: 1 1 calc(50% - 20px);
+        }
+
+        .skill-icon{
+            width: 35px;
+            height: 35px;
+            border-radius: 25px;
+            background-color: rgba(97, 97, 97, 0.195);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Education Section */
+
+        .education-type, .work-type{
+            margin-top: 50px;
+        }
+        .education-name, .work-name{
+            margin-bottom: 35px;
+        }
+
+        .school-logo, .work-logo{
+            width: 150px;
+            height: 150px;
+            border-radius: 35px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .education-content, .work-content{
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+        }
+        .school-info1 p:nth-child(1), .school-info2 p:nth-child(1), .school-info3 p:nth-child(1), .school-info4 p:nth-child(1), .work-info1 p:nth-child(1){
+            font-size: 25px; 
+            font-weight: 600;
+        }
+        .school-info1 p:nth-child(2), .school-info2 p:nth-child(2), .school-info3 p:nth-child(2), .school-info4 p:nth-child(2), .work-info1 p:nth-child(2){
+            font-size: 15px; 
+            margin-top: 5px;
+        }
+        .school-info1 p:nth-child(3), .school-info2 p:nth-child(3), .work-info1 p:nth-child(3){
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+        .school-info1 p:nth-child(4), .school-info1 p:nth-child(5), .school-info3 p:nth-child(3), .school-info3 p:nth-child(5), .school-info3 p:nth-child(7), .school-info4 p:nth-child(3){
+            font-size: 15px; 
+            margin-top: 20px;
+        }
+        .school-info1 p:nth-child(6), .school-info2 p:nth-child(5), .school-info2 p:nth-child(6), .school-info3 p:nth-child(4), .school-info3 p:nth-child(6), .school-info3 p:nth-child(8), .school-info4 p:nth-child(4){
+            font-size: 13px; 
+            text-indent: 15px;
+        }
+
+        /* Work Section */
+        .work-info1{
+            margin-top: 5px;
+        }
+
+        .work-content{
+            display: flex;
+            align-items: center;
+        }
+
+        .work-logo{
+            top: -80px;
+        }
+
+        .work-type{
+            margin-left: 20px;
+        }
+
+        ul{
+            line-height: 30px;
+        }
+        
+        .socials-content{
+            margin-top: 50px;
+            margin-left: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+
+        }
+
+        .socials-btn{
+            width: 300px;
+            height: 100px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+        }
+
+        .socials-btn::after {
+            border-radius: 30px;
+        }
+
+        .socials-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .socials-logo{
+            width: 60px;
+            height: 60px;
+            margin-left: 15px;
+        }
+
+        .socials-text{
+            justify-items: left;
+        }
+
+        .socials-text p:nth-child(1){
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .socials-text p:nth-child(2){
+            font-size: 15px;
+
+        }
+        
+        .footer-text {
+            grid-column: 2;
+            grid-row: 3;
+            text-align: center;
+            font-size: 14px;
+            color: rgb(255, 255, 255);
+            margin-top: 5px; /* space between main-info and footer */
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+ 
+
+        /* === FLIPPING CARD EFFECT === */
+        .projects-container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        #projects{
+            justify-items: center;
+        }
+
+        .disclaimer{
+            width:700px;
+            text-align: center;
+            margin-top: 30px;
+            line-height: 30px;
+        }
+
+        .flip-card, .flip-card-inner, .flip-card-front,
+        .flip-card-back{
+            width: 400px;
+            height: 350px;
+            border-radius: 30px;
+        
+        }
+        
+        .flip-card {
+            background: transparent;
+            perspective: 1000px; /* enables 3D flip */
+            margin: 20px auto;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            transition: transform 0.4s;
+            transform-style: preserve-3d;
+            /* border-radius: 15px; */
+        }
+
+        /* Flip on hover */
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: block;
+            /* align-items: center; */
+            /* justify-content: center; */
+            align-content: center;
+            text-align: center;
+            justify-items: center;
+            /* backdrop-filter: blur(10px); */
+            /* background: rgba(255, 255, 255, 0.1); */
+            /* border: 1px solid rgba(255, 255, 255, 0.2); */
+            color: white;
+            box-sizing: border-box;
+        }
+
+        /* Front side */
+        .flip-card-front {
+            font-size: 20px;
+            font-weight: 200;
+        }
+
+        /* Back side */
+        .flip-card-back {
+            transform: rotateY(180deg);
+            flex-direction: column;
+            text-align: center;
+            font-size: 0.9rem;
+            /* line-height: 50px; */
+        }
+
+        /* Optional button styling */
+        .project-btn {
+            margin-top: 30px;
+            padding: 10px 35px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;        
+        }
+   
+     
+        .project-btn::after {
+            border-radius: 30px;
+        }
+
+        .project-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .image-mockups{
+            width: 400px;
+            height: 260px;
+            border-radius: 25px 25px 0px 0px;
+           
+        } 
+        
+        .mockup-container{
+            width: 400px;
+            height: 260px;
+            margin-top: -40px;
+        }
+        
+        .project-name{
+            margin-top: 30px;
+        }
+
+        .project-name p:nth-child(1){
+            font-weight: 500;
+            font-size: 15px;
+        }
+        
+        .project-logo{
+            width: 50px;
+        }

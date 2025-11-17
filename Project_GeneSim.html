@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marlon Velasco Portfolio</title>
+    <link rel="stylesheet" href="Projects_Style.css">
+    <link rel="icon" type="image/x-icon" href="Marlon_Logo.png">
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+</head>
+<body>
+    <div class="controls">
+        <div class="previous">
+            <a href="Project_Whimsigifts.html" style="text-decoration: none;">
+                <button class="previous-btn glass" > <iconify-icon class="icon-btn" icon="typcn:arrow-back" style="color: white" width="20"></iconify-icon>Previous</button>
+            </a>
+            <p>Whimsigifts</p>
+        </div>
+        
+        <div class="main">
+            <a href="Velasco_Resume.html" style="text-decoration: none;">
+                <button class="main-btn glass" >Back to Main Page</button>
+            </a>
+        </div>
+        
+        <!-- <div class="next">
+            <p>GeneSim</p>
+            <a href="Project_GeneSim.html" style="text-decoration: none;">
+                <button class="next-btn glass" > <iconify-icon class="icon-btn" icon="typcn:arrow-forward" style="color: white" width="20"></iconify-icon>Next</button>
+            </a>
+        </div> -->
+    </div>
+
+    <div class="project-info">
+        <div class="project-logo glass">
+        <img class="logo" src="Projects_Page/Genesim_Project.png" alt="">
+        </div>    
+            <div class="details">
+                <p>GeneSim (Genetics Simulation)</p>
+                <p><strong>Type:</strong> <span class="tab-space1">Academic Project — Desktop App UI Design</span></p>
+                <p><strong>Subject Course:</strong> <span class="tab-space3">Modelling and Simulation</span></p>
+                <p><strong>Year:</strong> <span class="tab-space2">2023</span></p>
+                <p><strong>Role/Contributions:</strong> <span class="tab-space4">Lead UI designer</span></p>
+                <p><strong>Tool used:</strong> <span class="tab-space5">Qt Designer</span></p>
+            </div>
+    </div>
+
+    <div class="nav glass">
+        <button class="nav-btn glass active" onclick="showSection('description')"><iconify-icon class="nav-icon-btn" icon="fluent:text-description-16-filled" style="color: white" width="20"></iconify-icon> <span>Description</span></button>
+        <button class="nav-btn glass" onclick="showSection('brand')"><iconify-icon class="nav-icon-btn" icon="fa-solid:paint-brush" style="color: white" width="20"></iconify-icon> <span>Brand Identity</span></button>
+        <button class="nav-btn glass" onclick="showSection('UI')"><iconify-icon class="nav-icon-btn" icon="material-symbols:dual-screen" style="color: white" width="20"></iconify-icon> <span>User Interface</span></button>
+        
+    </div>
+
+    <div class="content glass">
+        <section id="description" class="active">
+            <div class="gen-description">
+                <p class="desc-detail">General Description</p>
+                <hr>
+                <p>GeneSim is an educational desktop application developed for the Modelling and Simulation course. This innovative application 
+                    is designed to simulates people's genetic inheritance by predicting possible physical attributes, traits, and potential health 
+                    issues of a child based on their parental characteristcs. It provides users informative experience of understanding how genetics 
+                    can influence physical appearance and inherited conditions.
+
+                    <br> <br>
+                    By combining science and technology, GeneSim serves as both an educational and interactive tool as well as, entertainment, or personal 
+                    curiosity, offering a fascinating insight into the world of genetics. It allows users to visualize genetic outcomes through simulation, 
+                    making more engaging and accessible for students and general users.</p>
+            </div>
+            
+        
+            <div class="objectives">
+                    <p class="desc-detail">Objectives</p>
+                    <hr>
+                        <div class="desc-content">
+                            <div class="desc-item">
+                                <img class="desc-icon glass" src="https://img.icons8.com/?size=100&id=13213&format=png&color=000000" alt="User Icon">
+                                <p>To provide an interactive tool for learning basic genetics and inheritance patterns.</p>
+                            </div>
+                            <div class="desc-item">
+                                <img class="desc-icon glass" src="https://img.icons8.com/?size=100&id=bC0-FzO7qW0R&format=png&color=000000" alt="User Icon">
+                                <p>To visualize genetic results based on user-defined parental data.</p>
+                            </div>
+                            <div class="desc-item">
+                                <img class="desc-icon glass" src="https://img.icons8.com/?size=100&id=1aKoLvEsfdl7&format=png&color=000000" alt="User Icon">
+                                <p>To promote educational engagement through interactive design.</p>
+                            </div>
+                        </div>
+            </div>
+
+            <div class="target">
+                    <p class="desc-detail">Target Users</p>
+                    <hr>
+                        <div class="desc-content">
+                            <div class="desc-item">
+                                <img class="desc-icon glass" src="https://img.icons8.com/?size=100&id=OYbFh7PuEW4n&format=png&color=000000" alt="User Icon">
+                                <p>Students studying genetics and biology.</p>
+                            </div>
+                            <div class="desc-item">
+                                <img class="desc-icon glass" src="https://img.icons8.com/?size=100&id=40734&format=png&color=000000" alt="User Icon">
+                                <p>Educators seeking a visual aid for teaching heredity.</p>
+                            </div>
+                            <div class="desc-item">
+                                <img class="desc-icon glass" src="https://img.icons8.com/?size=100&id=13088&format=png&color=000000" alt="User Icon">
+                                <p>Individuals curious about genetic simulations and traits inheritance.</p>
+                            </div>
+
+                        </div>
+            </div>
+
+
+            <div class="features">
+                    <p class="desc-detail">Features</p>
+                    <hr>
+                        <div class="desc-content">
+                            <div class="desc-item">
+                                <img class="desc-icon glass" src="https://img.icons8.com/?size=100&id=p2YCDur26Xn9&format=png&color=000000" alt="User Icon">
+                                <p>Physical Attributes Simulation (e.g., eye color, height, hair type)</p>
+                            </div>
+                            <div class="desc-item">
+                                <img class="desc-icon glass" src="https://img.icons8.com/?size=100&id=14891&format=png&color=000000" alt="User Icon">
+                                <p>Genetic Disease Simulation</p>
+                            </div>
+                            <div class="desc-item">
+                                <img class="desc-icon glass" src="https://img.icons8.com/?size=100&id=13513&format=png&color=000000" alt="User Icon">
+                                <p>Interactive Input for Parental Traits</p>
+                            </div>
+                            <div class="desc-item">
+                                <img class="desc-icon glass" src="https://img.icons8.com/?size=100&id=13184&format=png&color=000000" alt="User Icon">
+                                <p>Visual Result Display</p>
+                            </div>
+
+                        </div>
+            </div>
+
+              
+        </section>
+
+        <section id="brand">
+            <img class="brand" src="Brand Identity/GeneSim Brand.png">
+        </section>
+
+        <section id="UI">
+            <div class="UI">
+                <div class="shot-container2">
+                    <img src="GeneSimUI/1 GENETICS SIMULATOR UI.jpg"  class="shots2">
+                    <p class="UI-desc">Login Page</p>
+                </div>
+                <div class="shot-container2">
+                    <img src="GeneSimUI/2 GENETICS SIMULATOR UI.jpg"  class="shots2">
+                    <p class="UI-desc">Genetic Health Simulator</p>
+                </div>
+                <div class="shot-container2">
+                    <img src="GeneSimUI/3 GENETICS SIMULATOR UI.jpg"  class="shots2">
+                    <p class="UI-desc">Physical Feature Simulator</p>
+                </div>
+                <div class="shot-container2">
+                    <img src="GeneSimUI/4 GENETICS SIMULATOR UI.jpg"  class="shots2">
+                    <p class="UI-desc">Traits Simulator</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <div class="controls2">
+        <div class="previous">
+            <a href="Project_Whimsigifts.html" style="text-decoration: none;">
+                <button class="previous-btn glass" > <iconify-icon class="icon-btn" icon="typcn:arrow-back" style="color: white" width="20"></iconify-icon>Previous</button>
+            </a>
+            <p>Whimsigifts</p>
+        </div>
+        
+        <div class="main">
+            <a href="Velasco_Resume.html" style="text-decoration: none;">
+                <button class="main-btn glass" >Back to Main Page</button>
+            </a>
+        </div>
+        
+        <!-- <div class="next">
+            <p>GeneSim</p>
+            <a href="Project_GeneSim.html" style="text-decoration: none;">
+                <button class="next-btn glass" > <iconify-icon class="icon-btn" icon="typcn:arrow-forward" style="color: white" width="20"></iconify-icon>Next</button>
+            </a>
+        </div> -->
+    </div>
+
+     <div class="footer-text">
+        © 2025 Marlon Velasco. All rights reserved.
+    </div>
+
+    <script>
+            function showSection(id) {
+            // Remove active state from buttons
+            document.querySelectorAll(".nav-btn").forEach(btn => btn.classList.remove("active"));
+            // Add active state to clicked button
+            event.currentTarget.classList.add("active");
+
+            // Hide all sections
+            document.querySelectorAll(".content section").forEach(section => section.classList.remove("active"));
+            // Show selected section
+            document.getElementById(id).classList.add("active");
+            }
+        </script>
+</body>
+</html>
+
+
+
+
+                            <!-- <div class="desc-item">
+                                <img class="desc-icon glass" src="" alt="User Icon">
+                                <p></p>
+                            </div> -->
+
+
+                            <!-- <div class="desc-item">
+                                <img class="desc-icon glass" src="" alt="User Icon">
+                                <p></p>
+                            </div>
+                            <div class="desc-item">
+                                <img class="desc-icon glass" src="" alt="User Icon">
+                                <p></p>
+                            </div>
+                            <div class="desc-item">
+                                <img class="desc-icon glass" src="" alt="User Icon">
+                                <p></p>
+                            </div> -->
+
+
+
+                            
