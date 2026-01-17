@@ -203,10 +203,11 @@
     </div>
 
     <div class="footer-text">
-        © 2025 Marlon Velasco. All rights reserved.
+        © <span id="year"></span> Marlon Velasco. All rights reserved.
     </div>
 
     <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
             function showSection(id) {
             // Remove active state from buttons
             document.querySelectorAll(".nav-btn").forEach(btn => btn.classList.remove("active"));
@@ -231,6 +232,7 @@
     <p></p>
 
 </div> -->
+
 
 
 
