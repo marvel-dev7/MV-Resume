@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="https://icons8.com/icons">
 </head>
 <body>
+    <div class="intro" id="intro">
+        <div class="reveal-circle"></div>
+        <img src="Marlon_Logo.png" class="logo" alt="Logo">
+    </div>
+    
     <div class="nav-container glass">
         <button class="nav-btn glass active" onclick="showSection('about')"><iconify-icon class="nav-icon-btn" icon="line-md:person-filled" style="color: white" width="20"></iconify-icon> <span>About Me</span></button>
         <button class="nav-btn glass" onclick="showSection('skills')"><iconify-icon class="nav-icon-btn" icon="line-md:cog-filled" style="color: white" width="20"></iconify-icon> <span>Skills</span></button>
@@ -404,7 +409,7 @@
                 <div class="education-content">
                         <img class="school-logo glass" src="Schools/NCST.png" alt="">
                     <div class="school-info2">
-                        <p>National College of Science and Techonology</p>
+                        <p>National College of Science and Technology</p>
                         <p>140 Emilio Aguinaldo Hwy, Dasmariñas, Cavite</p>
                         <p>Science, Technology, Engineering, and Mathematics (STEM)</p>
                         <p>With High Honors</p>
@@ -541,11 +546,34 @@
 
     </div>
     
-    <div class="footer-text">
-        © 2025 Marlon Velasco. All rights reserved.
-    </div>
+        <div class="footer-text">
+            © <span id="year"></span> Marlon Velasco. All rights reserved.
+        </div>
 
         <script>
+            window.addEventListener("load", () => {
+            const intro = document.getElementById("intro");
+
+            // Step 1: logo appears immediately (via CSS animation)
+            // Step 2: after logo animation (~1s), expand circle
+            setTimeout(() => {
+                intro.classList.add("reveal-circle-expanded");
+            }, 1000);
+
+            // Step 3: after circle expands (~1.3s), fade out overlay
+            setTimeout(() => {
+                intro.style.opacity = 0; // fade out
+            }, 1900); // 1s logo + 1.3s circle = 2.3s
+
+            // Step 4: remove overlay completely after fade-out (~0.8s)
+            setTimeout(() => {
+                intro.remove();
+            }, 3000); // 2.3s + 0.8s fade-out
+            });
+
+
+            document.getElementById("year").textContent = new Date().getFullYear();
+
             function showSection(id) {
             // Remove active state from buttons
             document.querySelectorAll(".nav-btn").forEach(btn => btn.classList.remove("active"));
@@ -561,6 +589,7 @@
 
 </body>
 </html>
+
 
 
 
